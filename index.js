@@ -268,12 +268,14 @@ client.on("interactionCreate", async (interaction) => {
           .setCustomId("game_input")
           .setLabel("Game")
           .setStyle(TextInputStyle.Short)
+          .setPlaceholder("e.g. Minecraft, Rocket League, etc.")
           .setRequired(true);
 
         const durationInput = new TextInputBuilder()
           .setCustomId("duration_input")
           .setLabel("Duration (minutes)")
           .setStyle(TextInputStyle.Short)
+          .setPlaceholder("e.g. 10, 15, etc.")
           .setRequired(true);
 
         modal.addComponents(
@@ -302,6 +304,7 @@ client.on("interactionCreate", async (interaction) => {
           .setCustomId("new_game_input")
           .setLabel("New Game")
           .setStyle(TextInputStyle.Short)
+          .setPlaceholder("e.g. Minecraft, Rocket League, etc.")
           .setRequired(true);
 
         modal.addComponents(new ActionRowBuilder().addComponents(gameInput));
@@ -318,6 +321,7 @@ client.on("interactionCreate", async (interaction) => {
           .setCustomId("new_duration_input")
           .setLabel("Duration (minutes)")
           .setStyle(TextInputStyle.Short)
+          .setPlaceholder("e.g. 10, 15, etc.")
           .setRequired(true);
 
         modal.addComponents(new ActionRowBuilder().addComponents(durationInput));
@@ -405,3 +409,4 @@ app.get("/", (req, res) => res.send("Availability bot running on Render."));
 app.listen(process.env.PORT || 3000, () =>
   console.log("Web server ready.")
 );
+
